@@ -1,39 +1,33 @@
+package Fifth_Lab;
+
 import java.util.Scanner;
 
-/**
- * Created by LAB on 3/7/2022.
- */
 public class TestDoublyLinkedList {
     public static void main(String[] args) {
-        DoublyLinkedList<String> list = new DoublyLinkedList<>();
+        DoublyLinkedList<String> dList = new DoublyLinkedList<String>();
         Scanner in = new Scanner(System.in);
-        int choice = -1;
-        while (choice != 0)
-        {
-            System.out.println("Number 1 is add first \tNumber 2 is add last \tNumber 3 is remove first \tNumber 4 is remove last \tNumber 0 exit \t");
-            choice = in.nextInt();
-            switch (choice)
-            {
-                case 1 :
-                    System.out.println("input the name");
-                    list.addFirst(in.next());
+        System.out.println("Enter\n 1- To AddFirst. \n 2- To AddLast. \n 3- To RemoveFirst. \n 4- To RemoveLast.\n");
+        for (int i = 0; i < 4; i++) {
+            int choice;
+            System.out.println("Your Choice");
+            choice=in.nextInt();
+            switch (choice){
+                case 1:
+                    System.out.println("input Name : ");
+                    dList.addFirst(in.next());
                     break;
-                case 2 :
-                    System.out.println("input the name");
-                    list.addLast(in.next());
+                case 2:
+                    System.out.println("input Name : ");
+                    dList.addLast(in.next());
                     break;
                 case 3:
-                    System.out.println(list.removeFirst());
+                    System.out.println("Deleted Name : "+dList.removeFirst());
                     break;
                 case 4:
-                    System.out.println(list.removeLast());
+                    System.out.println("Deleted Name : " + dList.removeLast());
                     break;
-                case 0 :
-                    System.exit(0);
-                    default:
-                        System.out.println("Your choice is incorrect");
             }
-            System.out.println("first = " + list.first() +"\tLast = "+ list.last()+"\tsize = "+ list.size());
+            System.out.println("\nFirst = " + dList.first()+"\t Last = " + dList.last()+"\tSize = " + dList.size());
         }
     }
 }
